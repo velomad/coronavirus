@@ -1,0 +1,56 @@
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card-styles {
+  width: 500px;
+  height: 190px;
+}
+
+.card p {
+  width: 450px;
+  text-align: center;
+}
+
+.fas {
+  cursor: pointer;
+}
+
+.expanded-patient-box{
+  margin-right: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+.expanded-patient-box p {
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.sizer {
+  width: 150px;
+  height: 50px;
+}
+
+/* ====================media query ======================== */
+@media only screen and (max-width: 500px) {
+
+  .card-styles {
+    width: 500px;
+    height: 220px;
+  }
+  
+  .card p {
+    margin-top: 10px;
+    width: 320px;
+    text-align: center;
+  }
+
+}

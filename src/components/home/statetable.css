@@ -1,0 +1,43 @@
+table .confirmed::before {
+  content: "Confirmed ";
+}
+table .active::before {
+  content: "Active ";
+}
+table .recovered::before {
+  content: "Recovered ";
+}
+table .deceased::before {
+  content: "Deceased ";
+}
+
+.before-table-row{
+  padding: 0px 0 30px 0;
+}
+
+.box{
+  height: 30px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 2px 10px 0 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  table .confirmed::before {
+    content: "Cnfrm ";
+  }
+  table .active::before {
+    content: "Actv ";
+  }
+  table .recovered::before {
+    content: "Rcvrd ";
+  }
+  table .deceased::before {
+    content: "Dcs ";
+  }
+  .label{
+    padding: 25px 0 0;
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.updatedat{
+  margin-top: 25px;
+  display: inline-block;
+  padding : 5px;
+  font-size: 14px;
+}  
+
+.updates{
+  margin-top: 25px;
+  display: inline-block;
+  padding : 5px;
+  font-size: 14px;
+  cursor: pointer;
+}  
+
+.tested{
+  margin-top: 25px;
+  margin-bottom: 35px;
+  display: inline-block;
+padding: 5px;
+}  
+
+@media only screen and (max-width: 500px) {
+  .updatedat{
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+  }  
+
+  .tested{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 16px;
+  }  
+
+  .updates{
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+  }
+
+  
+}
