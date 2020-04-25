@@ -3,6 +3,7 @@ import BoxMessage from './BoxMessage';
 import PatientHeatMap from './PatientHeatMap';
 import { connect } from 'react-redux';
 import { getPatientData } from '../../store/actions/patientActions';
+import SelectOptions from './SelectOptions';
 
 
 const Demographics = (props) => {
@@ -13,16 +14,19 @@ const Demographics = (props) => {
 
     return (
         <div className="container">
-            <p>select options for states district and also the calander</p>
+
+            <div className="mt-2">
+                <SelectOptions />
+            </div>
 
             <div>
                 <BoxMessage />
             </div>
 
-
             <div className="mt-5">
                 <PatientHeatMap />
             </div>
+
         </div>
     )
 }

@@ -4,11 +4,14 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Home from './home/Home';
 import Demographics from './demographics/Demographics';
 import DeepDive from './deep-dive/DeepDive';
+import '../index.css'
+import {connect} from 'react-redux';
 
 
-function App() {
+function App(props) {
+
   return (
-    <div className="App">
+    <div className={`App ${props.modeState && 'dark-body'}`} >
       <BrowserRouter>
         <NavBar />
         <Route exact path="/" component={Home} />
@@ -19,4 +22,10 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    modeState: state.darkMode.hasmode
+  }
+}
+
+export default connect(mapStateToProps)(App);

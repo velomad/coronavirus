@@ -3,7 +3,8 @@ import "../../index.css";
 
 const UpdateLiveStats = (props) => {
   let convertedTime;
-  convertedTime = props.lastUpdatedTime;
+  convertedTime = (props.lastUpdatedTime);
+
 
   return (
     <div>

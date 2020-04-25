@@ -100,7 +100,7 @@ const StateTable = (props) => {
 									</div>
 								)}
 							</td>
-							<td className={`${data.deltarecovered > 20 ? `rgba-green-slight` : ''}`}>
+							<td className={`${data.deltarecovered > 35 ? `rgba-green-slight` : ''}`}>
 								{data.recovered}
 								{data.deltarecovered <= 0 ? (
 									''

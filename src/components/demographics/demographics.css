@@ -20,7 +20,7 @@
 
 .expanded-patient-box{
   margin-right: 10px;
-  border-radius: 10px;
+  border-radius: 7px;
   margin-top: 10px;
   cursor: pointer;
 }
@@ -51,6 +51,11 @@
     margin-top: 10px;
     width: 320px;
     text-align: center;
+  }
+
+  .select-option{
+    display: flex;
+    justify-content: center;
   }
 
 }

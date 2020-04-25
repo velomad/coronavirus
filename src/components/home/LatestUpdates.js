@@ -5,6 +5,7 @@ import '../../index.css';
 const LatestUpdates = (props) => {
 	const [latestUpdates, setLatestUpdates] = useState(false);
 
+
 	return (
 		<div>
 			<div>

@@ -1,9 +1,12 @@
-import { GET_PATIENT_DATA, FETCHING_PATIENT_DATA, ERROR_PATIENT_DATA } from '../actions/patientActions'
+import { GET_PATIENT_DATA, FETCHING_PATIENT_DATA, ERROR_PATIENT_DATA, GET_STATES, FETCHING_STATES, ERROR_STATES } from '../actions/patientActions'
 
 const initialState = {
-    fetchingData: true,
+    fetchingData: false,
     getPatientData: [],
-    errorPatientData: ''
+    errorPatientData: '',
+    fetchingStates: false,
+    getStatesData: [],
+    errorFetchingStates: ''
 }
 
 const patientReducer = (state = initialState, action) => {
@@ -25,6 +28,23 @@ const patientReducer = (state = initialState, action) => {
                 fetchingData: false,
                 errorPatientData: action.payload
             };
+        case FETCHING_STATES:
+            return {
+                ...state,
+                fetchingStates: true
+            }
+        case GET_STATES:
+            return {
+                ...state,
+                getStatesData: action.payload,
+                fetchingStates: false
+            }
+        case ERROR_STATES:
+            return {
+                ...state,
+                fetchingStates: false,
+                errorFetchingStates: action.payload
+            }
         default:
             return state;
     }

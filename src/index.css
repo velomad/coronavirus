@@ -1,7 +1,12 @@
-body {
-  margin: 0;
-  padding: 0;
+.dark-body {
+ background-color: #161625; 
+ color: #ccc;
 }
+
+.dark-mode{
+  font-size: 17px;
+}
+
 
 .updatedat{
   margin-top: 25px;

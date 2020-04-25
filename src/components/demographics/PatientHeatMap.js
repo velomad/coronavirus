@@ -4,17 +4,21 @@ import { connect } from 'react-redux';
 import PatientModel from './PatientModel';
 
 const PatientHeatMap = (props) => {
-
     const [isChecked, setIsChecked] = useState(false)
     const [patientNumber, setPatientNumber] = useState('')
 
+
+    // expand toggle switch
     const handleToggle = () => {
         setIsChecked(!isChecked)
     }
 
-
     return (
         <div className="container">
+
+            <div className="row">
+                <h2 className="text-info" style={{fontWeight:600}}>Demographics</h2>
+            </div>
 
             <div className="row">
 
@@ -27,11 +31,11 @@ const PatientHeatMap = (props) => {
 
             <div className="row d-flex justify-content-center mt-5">
 
-                {props.patientData.map((patient) => (
+                {props.patientData.map((patient, index) => (
                     <div
                         onClick={() => setPatientNumber(patient.patientnumber)}
                         data-toggle="modal" data-target="#modalPush"
-                        key={patient.patientnumber}
+                        key={index}
                         className={`expanded-patient-box ${patient.gender === "F" ? 'pink lighten-3' : patient.gender === "M" ? 'blue lighten-3' : 'grey lighten-3'}`}>
 
                         {isChecked ?
@@ -45,7 +49,7 @@ const PatientHeatMap = (props) => {
                                 }}>
                                 P{patient.patientnumber}</p>
                             :
-                            <div style={{ width: "30px", height: "30px" }}>
+                            <div style={{ width: "20px", height: "20px" }}>
                             </div>
                         }
                     </div>

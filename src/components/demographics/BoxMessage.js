@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import './demographics.css';
-import { useEffectOnce } from 'react-use'
+import { useEffectOnce, useLocalStorage } from 'react-use'
 
 const BoxMessage = () => {
 	const [messageBox, setMessageBox] = useState(true)
-
+	const [box, setBox] = useLocalStorage('messageBox', 'true')
 
 	const handleMessageBox = () => {
 		setMessageBox(false)
+		setBox(false)
 	}
 
 
 	return (
 		<div>
-			{messageBox &&
+			{messageBox, box &&
 				<div className="card-container">
 					<div className="card rgba-blue-slight card-styles">
 						<div className="card-body">
