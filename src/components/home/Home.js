@@ -43,6 +43,7 @@ const Home = (props) => {
 							hoverColor="red"
 							textColor="text-danger"
 							activegraph={<ConfirmedMiniGraph />}
+
 						/>
 					</div>
 					<div className="col-sm-6 col-lg-3 d-flex justify-content-center">
@@ -74,7 +75,7 @@ const Home = (props) => {
 							todayCount={props.liveStatsData.deltadeaths}
 							badgeColor="badge badge-light"
 							hoverColor="grey"
-							textColor="text-dark"
+							textColor="#ccc"
 							activegraph={<DeceasedMiniGraph />}
 						/>
 					</div>

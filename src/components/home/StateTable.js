@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './statetable.css';
+import { connect } from 'react-redux';
 
 const StateTable = (props) => {
 	const [searchValue, setSearchValue] = useState('');
@@ -13,8 +14,8 @@ const StateTable = (props) => {
 		return stateName.state.toLowerCase().includes(searchValue.toLowerCase());
 	});
 
-  // ==============================================================================
-  // labels setter and unsetter depending upon if there is any case for current date
+	// ==============================================================================
+	// labels setter and unsetter depending upon if there is any case for current date
 	var isConfirmed;
 	var deActivate;
 
@@ -34,14 +35,14 @@ const StateTable = (props) => {
 			deActivate = 'deactivate';
 		}
 	}
-// =============================================================================
+	// =============================================================================
 
 	console.log();
 	return (
 		<div className="container">
 			<div className="row before-table-row">
 				<input
-					className="form-control col-sm-3"
+					className={`form-control col-sm-3 ${props.modeState && 'dark-body'}`}
 					id="tableSearch"
 					type="text"
 					placeholder="Search State"
@@ -75,54 +76,54 @@ const StateTable = (props) => {
 				<tbody>
 					{filteredStates.map((data, index) => (
 						<tr key={index}>
-							<td>{data.state}</td>
-							<td className={`${data.deltaconfirmed > 60 ? `rgba-red-slight` : ''}`}>
+							<td className={`${props.modeState && 'dark-table'} `}>{data.state}</td>
+							<td className={`${data.deltaconfirmed > 60 ? `rgba-red-slight` : ''} ${props.modeState && 'dark-table'}`}>
 								{data.confirmed}
 								{data.deltaconfirmed <= 0 ? (
 									''
 								) : (
-									<div>
-										<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textConfirmed}`}>
-											{data.deltaconfirmed}
-										</i>
-									</div>
-								)}
+										<div>
+											<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textConfirmed}`}>
+												{data.deltaconfirmed}
+											</i>
+										</div>
+									)}
 							</td>
-							<td>
+							<td className={`${props.modeState && 'dark-table'} `}>
 								{data.active}
 								{data.deltaconfirmed <= 0 ? (
 									''
 								) : (
-									<div>
-										<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textActive}`}>
-											{data.deltaconfirmed}
-										</i>
-									</div>
-								)}
+										<div>
+											<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textActive}`}>
+												{data.deltaconfirmed}
+											</i>
+										</div>
+									)}
 							</td>
-							<td className={`${data.deltarecovered > 35 ? `rgba-green-slight` : ''}`}>
+							<td className={`${data.deltarecovered > 35 ? `rgba-green-slight` : ''} ${props.modeState && 'dark-table'}`}>
 								{data.recovered}
 								{data.deltarecovered <= 0 ? (
 									''
 								) : (
-									<div>
-										<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textRecovered}`}>
-											{data.deltarecovered}
-										</i>
-									</div>
-								)}
+										<div>
+											<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textRecovered}`}>
+												{data.deltarecovered}
+											</i>
+										</div>
+									)}
 							</td>
-							<td>
+							<td className={`${props.modeState && 'dark-table'} `}>
 								{data.deaths}
 								{data.deltadeaths <= 0 ? (
 									''
 								) : (
-									<div>
-										<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textDeceased}`}>
-											{data.deltadeaths}
-										</i>
-									</div>
-								)}
+										<div>
+											<i className={`far fa-arrow-alt-circle-up cc_pointer ${props.textDeceased}`}>
+												{data.deltadeaths}
+											</i>
+										</div>
+									)}
 							</td>
 						</tr>
 					))}
@@ -132,4 +133,10 @@ const StateTable = (props) => {
 	);
 };
 
-export default StateTable;
+const mapStateToProps = state => {
+	return {
+		modeState: state.darkMode.hasmode
+	}
+}
+
+export default connect(mapStateToProps)(StateTable);

@@ -1,12 +1,14 @@
 import React from "react";
 import "./livestats.css";
+import {connect} from 'react-redux';
 
 const LiveStats = (props) => {
+
   return (
     <div>
       <div className="card mt-4 view overlay">
         <div
-          className={`card-body card-settings rgba-${props.hoverColor}-slight`}
+          className={`card-body card-settings  ${props.modeState && 'dark-body'} rgba-${props.hoverColor}-slight`}
         >
           <div className="container row">
             <h3
@@ -26,7 +28,7 @@ const LiveStats = (props) => {
 
           {/* CR for new delta cases */}
           {props.todayCount  <=0 ? (
-            <p className={props.textColor}>No new cases yet</p>
+            <p className={`${props.textColor} d-flex justify-content-start `}>No new cases yet</p>
           ) : (
             <div className="container row">
               <h3
@@ -54,4 +56,10 @@ const LiveStats = (props) => {
   );
 };
 
-export default LiveStats;
+const mapStateToProps = state => {
+  return{
+    modeState : state.darkMode.hasmode
+  }
+}
+
+export default connect(mapStateToProps)(LiveStats);

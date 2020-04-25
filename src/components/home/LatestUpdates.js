@@ -5,7 +5,6 @@ import '../../index.css';
 const LatestUpdates = (props) => {
 	const [latestUpdates, setLatestUpdates] = useState(false);
 
-
 	return (
 		<div>
 			<div>
@@ -22,7 +21,7 @@ const LatestUpdates = (props) => {
 						.slice(0, 5)
 						.map((item, index) => (
 							<div key={index}>
-								<p style={{ width: '600px' }} className="col note note-secondary" >
+								<p style={{ width: '600px' }} className={` ${props.modeState && 'dark-body'} col note note-secondary`} >
 									{item.update}
 								</p>
 							</div>
@@ -36,6 +35,7 @@ const LatestUpdates = (props) => {
 const mapStateToProps = (state) => {
 	return {
 		getLatestUpdates: state.stats.latestUpdates,
+		modeState: state.darkMode.hasmode
 	};
 };
 

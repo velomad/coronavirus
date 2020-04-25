@@ -36,7 +36,7 @@ const PatientHeatMap = (props) => {
                         onClick={() => setPatientNumber(patient.patientnumber)}
                         data-toggle="modal" data-target="#modalPush"
                         key={index}
-                        className={`expanded-patient-box ${patient.gender === "F" ? 'pink lighten-3' : patient.gender === "M" ? 'blue lighten-3' : 'grey lighten-3'}`}>
+                        className={`expanded-patient-box ${patient.gender === "F" ? 'pink lighten-1' : patient.gender === "M" ? 'blue lighten-1' : 'grey lighten-2'}`}>
 
                         {isChecked ?
                             <p

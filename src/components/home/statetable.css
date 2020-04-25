@@ -11,6 +11,11 @@ table .deceased::before {
   content: "Deceased ";
 }
 
+.dark-table {
+  color: #ccc;
+}
+
+
 .before-table-row{
   padding: 0px 0 30px 0;
 }
