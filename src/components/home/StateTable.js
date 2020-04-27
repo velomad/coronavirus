@@ -40,7 +40,7 @@ const StateTable = (props) => {
 	console.log();
 	return (
 		<div className="container">
-			<div className="row before-table-row">
+			<div className="row before-table-row mt-3">
 				<input
 					className={`form-control col-sm-3 ${props.modeState && 'dark-body'}`}
 					id="tableSearch"

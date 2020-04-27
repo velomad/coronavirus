@@ -4,7 +4,7 @@ import { useEffectOnce, useLocalStorage } from 'react-use'
 
 const BoxMessage = () => {
 	const [messageBox, setMessageBox] = useState(true)
-	const [box, setBox] = useLocalStorage('messageBox', 'true')
+	const [box, setBox] = useLocalStorage('messageBox', true)
 
 	const handleMessageBox = () => {
 		setMessageBox(false)

@@ -1,6 +1,6 @@
 import React from "react";
 import "./livestats.css";
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 const LiveStats = (props) => {
 
@@ -27,25 +27,25 @@ const LiveStats = (props) => {
           {props.activegraph}
 
           {/* CR for new delta cases */}
-          {props.todayCount  <=0 ? (
+          {props.todayCount <= 0 ? (
             <p className={`${props.textColor} d-flex justify-content-start `}>No new cases yet</p>
           ) : (
-            <div className="container row">
-              <h3
-                className={`${props.textColor} card-title`}
-                style={{ fontSize: "20px" }}
-              >
-                <i className="far fa-arrow-alt-circle-up cc_pointer text-small"></i>
-              </h3>
+              <div className="container row">
+                <h3
+                  className={`${props.textColor} card-title`}
+                  style={{ fontSize: "20px" }}
+                >
+                  <i className="far fa-arrow-alt-circle-up cc_pointer text-small"></i>
+                </h3>
 
-              <h3
-                className={`${props.textColor} ml-auto`}
-                style={{ fontSize: "20px", fontWeight: 700 }}
-              >
-                [+{props.todayCount}]
+                <h3
+                  className={`${props.textColor} ml-auto`}
+                  style={{ fontSize: "20px", fontWeight: 700 }}
+                >
+                  [+{props.todayCount}]
               </h3>
-            </div>
-          )}
+              </div>
+            )}
 
         </div>
         <div
@@ -57,8 +57,8 @@ const LiveStats = (props) => {
 };
 
 const mapStateToProps = state => {
-  return{
-    modeState : state.darkMode.hasmode
+  return {
+    modeState: state.darkMode.hasmode
   }
 }
 

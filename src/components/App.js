@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "./navbar/NavBar";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from './home/Home';
 import Demographics from './demographics/Demographics';
 import DeepDive from './deep-dive/DeepDive';
 import '../index.css'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+
 
 
 function App(props) {
+
 
   return (
     <div className={`App ${props.modeState && 'dark-body'}`} >

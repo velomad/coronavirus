@@ -12,7 +12,7 @@ export const getPatientData = () => {
     return dispatch => {
         dispatch({ type: FETCHING_PATIENT_DATA })
         axios.get('https://api.covid19india.org/raw_data.json').then(resp => {
-            dispatch({ type: GET_PATIENT_DATA, payload: resp.data.raw_data.reverse().slice(0, 1640) })
+            dispatch({ type: GET_PATIENT_DATA, payload: resp.data.raw_data.reverse().slice(0, 500) })
         }).catch(err => {
             console.log(err)
             dispatch({ type: ERROR_PATIENT_DATA, payload: "Error Occured. Try again" })
@@ -23,12 +23,12 @@ export const getPatientData = () => {
 
 export const getStatesAction = () => {
     return dispatch => {
-        dispatch({type:FETCHING_STATES})
+        dispatch({ type: FETCHING_STATES })
         axios.get('https://api.covid19india.org/data.json').then(resp => {
-            dispatch({type:GET_STATES, payload:resp.data.statewise.slice(1, -1)})
+            dispatch({ type: GET_STATES, payload: resp.data.statewise.slice(1, -1) })
         }).catch(err => {
             console.log(err)
-            dispatch({type:ERROR_STATES, payload:'error fetching states'})
+            dispatch({ type: ERROR_STATES, payload: 'error fetching states' })
         })
     }
 }

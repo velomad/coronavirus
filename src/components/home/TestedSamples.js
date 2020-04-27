@@ -16,10 +16,12 @@ const TestedSamples = (props) => {
 
   return (
     <div>
-      <p className="tested text-muted rgba-blue-slight">
-        '<span className="text-info ">{tested}</span>' Samples are being tested
+      {tested === '' ? '' :
+        <p className="tested text-muted rgba-blue-slight">
+          '<span className="text-info ">{tested}</span>' Samples are being tested
         till now.
       </p>
+      }
     </div>
   );
 };

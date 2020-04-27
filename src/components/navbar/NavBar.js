@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useLocalStorage } from 'react-use';
 import { connect } from 'react-redux';
 import { darkModeAction } from '../../store/actions/darkModeActions';
 
-const NavBar = (props) => {
-  const [mode, setMode] = useState(false)
-  //  const [darkMode, setDarkMode] = useLocalStorage("dark-mode", false)
+const getInitialMode = () => {
+  const saevdMode = JSON.parse(localStorage.getItem('dark-mode'))
+  return saevdMode || false
+}
 
-  const handleDarkMode = () => {
-    setMode(!mode)
-    props.setMode(mode)
-  }
+const NavBar = (props) => {
+  const [mode, setMode] = useState(getInitialMode())
+
+useEffect(() => {
+    props.setModeProp(mode)
+    localStorage.setItem('dark-mode', JSON.stringify(mode))
+}, [mode])
+  
+
 
   return (
     <div className="App">
-
       <ul className={`nav justify-content-center ${props.modeState === false ? "grey lighten-4" : 'dark-body'} py-4`}>
         <li className="nav-item">
           <NavLink className="nav-link w3-animate-opacity" to="/">
@@ -33,7 +37,7 @@ const NavBar = (props) => {
           </NavLink>
         </li>
         <li
-          onClick={handleDarkMode}
+          onClick={() => setMode(!mode)}
           className="dark-mode nav-item w3-animate-opacity">
           <NavLink className="nav-link" to="#">
             {mode === false ?
@@ -54,7 +58,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setMode: (mode) => dispatch(darkModeAction(mode))
+    setModeProp: (mode) => dispatch(darkModeAction(mode))
   }
 }
 
