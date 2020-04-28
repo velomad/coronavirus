@@ -10,6 +10,7 @@ import RecoveredMiniGraph from './minigraphs/RecoveredMiniGraph';
 import DeceasedMiniGraph from './minigraphs/DeceasedMiniGraph';
 import TestedSamples from './TestedSamples';
 import LatestUpdates from './LatestUpdates';
+import IndiaMap from './geographics/IndiaMap';
 
 const Home = (props) => {
 	useEffect(() => {
@@ -23,11 +24,11 @@ const Home = (props) => {
 
 			<div className="container">
 				<div className="row">
-					<div className="col-sm-6 col-lg-3">
+					<div className="col-sm-12">
 						<UpdateLiveStats lastUpdatedTime={props.liveStatsData.lastupdatedtime} />
 					</div>
 
-					<div className="col-sm-6 col-lg-3">
+					<div className="col-sm-12">
 						<LatestUpdates />
 					</div>
 				</div>
@@ -83,14 +84,22 @@ const Home = (props) => {
 
 				<TestedSamples />
 
-				{/* State wise Table */}
-				<StateTable
-					stateData={props.statesData}
-					textConfirmed="text-danger"
-					textActive="text-primary"
-					textRecovered="text-success"
-					textDeceased="text-dark"
-				/>
+				<div className="row">
+					<div className="col-lg-6">
+						{/* State wise Table */}
+						<StateTable
+							stateData={props.statesData}
+							textConfirmed="text-danger"
+							textActive="text-primary"
+							textRecovered="text-success"
+							textDeceased="text-dark"
+						/>
+					</div>
+
+					<div className="col-lg-6">
+					<IndiaMap />
+					</div>
+				</div>
 			</div>
 		</div>
 	);

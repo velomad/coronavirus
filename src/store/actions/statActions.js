@@ -17,11 +17,12 @@ export const getLiveStatsAction = () => {
     dispatch({ type: FETCHING_LIVE_STATS });
     const statsRequest = "https://api.covid19india.org/data.json";
     const factoidsRequest = "https://api.covid19india.org/website_data.json";
-    const updatesRequest = "https://api.covid19india.org/updatelog/log.json";
+    const updatesRequest = "https://api.smartable.ai/coronavirus/news/IN";
 
     const statsResp = axios.get(statsRequest);
     const factoidsResp = axios.get(factoidsRequest);
-    const updatesResp = axios.get(updatesRequest);
+    const updatesResp = axios.get(updatesRequest,{ headers : { "Subscription-Key" : "3009d4ccc29e4808af1ccc25c69b4d5d" }});
+
 
     axios
       .all([statsResp, factoidsResp, updatesResp])
@@ -30,7 +31,6 @@ export const getLiveStatsAction = () => {
           const allDataStats = allData[0];
           const allDataFactoids = allData[1];
           const allDataUpdates = allData[2];
-
           dispatch({
             type: GET_LIVE_STATS,
             payload: allDataStats.data.statewise[0],
@@ -53,7 +53,7 @@ export const getLiveStatsAction = () => {
           });
           dispatch({
             type: GET_UPDATES,
-            payload: allDataUpdates.data,
+            payload: allDataUpdates.data.news,
           });
         })
       )

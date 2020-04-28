@@ -33,8 +33,8 @@ const PatientHeatMap = (props) => {
 
                 {props.patientData.map((patient, index) => (
                     <div
-                        onClick={() => setPatientNumber(patient.patientnumber)}
-                        data-toggle="modal" data-target="#modalPush"
+                        // onClick={() => setPatientNumber(patient.patientnumber)}
+                        // data-toggle="modal" data-target="#modalPush"
                         key={index}
                         className={`expanded-patient-box ${patient.gender === "F" ? 'pink lighten-1' : patient.gender === "M" ? 'blue lighten-1' : 'grey lighten-2'}`}>
 
@@ -55,7 +55,7 @@ const PatientHeatMap = (props) => {
                     </div>
                 ))}
             </div>
-            <PatientModel patientNumber={patientNumber} patientData={props.patientData} />
+            {/* <PatientModel patientNumber={patientNumber} patientData={props.patientData} /> */}
         </div>
     )
 }

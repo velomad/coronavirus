@@ -20,7 +20,7 @@ const StateTable = (props) => {
 	var deActivate;
 
 	for (var i in helperVar) {
-		if (helperVar[i] > 0) {
+		if (helperVar[i] > 60) {
 			isConfirmed = 'activate';
 		} else {
 			deActivate = 'deactivate';
@@ -29,7 +29,7 @@ const StateTable = (props) => {
 
 	var isRecover;
 	for (var i in helperVar2) {
-		if (helperVar2[i] > 0) {
+		if (helperVar2[i] > 35) {
 			isRecover = 'activate';
 		} else {
 			deActivate = 'deactivate';
@@ -126,6 +126,7 @@ const StateTable = (props) => {
 									)}
 							</td>
 						</tr>
+
 					))}
 				</tbody>
 			</table>

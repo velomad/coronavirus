@@ -32,13 +32,13 @@ table .deceased::before {
     content: "Cnfrm ";
   }
   table .active::before {
-    content: "Actv ";
+    content: "Active ";
   }
   table .recovered::before {
     content: "Rcvrd ";
   }
   table .deceased::before {
-    content: "Dcs ";
+    content: "Dcsd ";
   }
   .label{
     padding: 25px 0 0;

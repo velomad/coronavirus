@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 
 
-
 const PatientModel = (props) => {
 
-    // let newArry
-    // newArry = props.patientData[props.patientNumber - 1]
+
 
     return (
         <div>
@@ -16,15 +14,12 @@ const PatientModel = (props) => {
                         <div className="modal-header d-flex justify-content-center">
                             <p className="heading">Patient Number : {props.patientNumber}</p>
                         </div>
-
                         <div className="modal-body">
-                            {/* patient details here */}
-                            {/* <p>Detected City : {newArry.detectedcity}</p> */}
+                            patient details here
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
