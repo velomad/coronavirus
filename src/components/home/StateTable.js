@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './statetable.css';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 const StateTable = (props) => {
 	const [searchValue, setSearchValue] = useState('');
@@ -17,22 +19,20 @@ const StateTable = (props) => {
 	// ==============================================================================
 	// labels setter and unsetter depending upon if there is any case for current date
 	var isConfirmed;
-	var deActivate;
 
 	for (var i in helperVar) {
 		if (helperVar[i] > 60) {
 			isConfirmed = 'activate';
 		} else {
-			deActivate = 'deactivate';
 		}
 	}
 
 	var isRecover;
+	// eslint-disable-next-line no-redeclare
 	for (var i in helperVar2) {
 		if (helperVar2[i] > 35) {
 			isRecover = 'activate';
 		} else {
-			deActivate = 'deactivate';
 		}
 	}
 	// =============================================================================
@@ -47,7 +47,7 @@ const StateTable = (props) => {
 					type="text"
 					placeholder="Search State"
 					value={searchValue}
-					onChange={(e) => setSearchValue(e.target.value)}
+					onChange={(e) => setSearchValue(e)}
 				/>
 
 				{isConfirmed && (
@@ -75,8 +75,9 @@ const StateTable = (props) => {
 				</thead>
 				<tbody>
 					{filteredStates.map((data, index) => (
-						<tr key={index}>
-							<td className={`${props.modeState && 'dark-table'} `}>{data.state}</td>
+						<tr key={index} >
+							<Link to={`state/${data.statecode}`}>
+								<td className={`${props.modeState && 'dark-table'} `}>{data.state}</td></Link>
 							<td className={`${data.deltaconfirmed > 60 ? `rgba-red-slight` : ''} ${props.modeState && 'dark-table'}`}>
 								{data.confirmed}
 								{data.deltaconfirmed <= 0 ? (
@@ -126,7 +127,6 @@ const StateTable = (props) => {
 									)}
 							</td>
 						</tr>
-
 					))}
 				</tbody>
 			</table>

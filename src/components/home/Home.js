@@ -11,6 +11,7 @@ import DeceasedMiniGraph from './minigraphs/DeceasedMiniGraph';
 import TestedSamples from './TestedSamples';
 import LatestUpdates from './LatestUpdates';
 import IndiaMap from './geographics/IndiaMap';
+import AccordianTable from './AccordianTable';
 
 const Home = (props) => {
 	useEffect(() => {
@@ -87,6 +88,15 @@ const Home = (props) => {
 				<div className="row">
 					<div className="col-lg-6">
 						{/* State wise Table */}
+						
+						{/* <AccordianTable 
+						stateData={props.statesData}
+						textConfirmed="text-danger"
+						textActive="text-primary"
+						textRecovered="text-success"
+						textDeceased="text-dark"
+						/> */}
+
 						<StateTable
 							stateData={props.statesData}
 							textConfirmed="text-danger"
@@ -97,7 +107,7 @@ const Home = (props) => {
 					</div>
 
 					<div className="col-lg-6">
-					<IndiaMap />
+						<IndiaMap />
 					</div>
 				</div>
 			</div>

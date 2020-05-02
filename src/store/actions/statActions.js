@@ -21,7 +21,7 @@ export const getLiveStatsAction = () => {
 
     const statsResp = axios.get(statsRequest);
     const factoidsResp = axios.get(factoidsRequest);
-    const updatesResp = axios.get(updatesRequest,{ headers : { "Subscription-Key" : "3009d4ccc29e4808af1ccc25c69b4d5d" }});
+    const updatesResp = axios.get(updatesRequest,{ headers : { "Subscription-Key" : "2524213011294a6bb546d7cc09eab623" }});
 
 
     axios
@@ -31,6 +31,7 @@ export const getLiveStatsAction = () => {
           const allDataStats = allData[0];
           const allDataFactoids = allData[1];
           const allDataUpdates = allData[2];
+          console.log(allDataStats)
           dispatch({
             type: GET_LIVE_STATS,
             payload: allDataStats.data.statewise[0],

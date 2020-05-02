@@ -27,6 +27,7 @@ const LiveStats = (props) => {
           {props.activegraph}
 
           {/* CR for new delta cases */}
+          
           {props.todayCount <= 0 ? (
             <p className={`${props.textColor} d-flex justify-content-start `}>No new cases yet</p>
           ) : (
