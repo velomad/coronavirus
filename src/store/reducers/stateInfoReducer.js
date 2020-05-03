@@ -1,7 +1,9 @@
-import { GET_STATES_DATA } from "../actions/stateInfoActions";
+import { GET_STATES_DATA, GET_DISTRICT_DATA, GET_ZONE_DATA } from "../actions/stateInfoActions";
 
 const initialState = {
-    statesInfoData: []
+    statesInfoData: [],
+    districtData: [],
+    zoneData: [],
 }
 
 const stateInfoReducer = (state = initialState, action) => {
@@ -10,6 +12,16 @@ const stateInfoReducer = (state = initialState, action) => {
             return {
                 ...state,
                 statesInfoData: action.payload
+            }
+        case GET_DISTRICT_DATA:
+            return {
+                ...state,
+                districtData: action.payload
+            }
+        case GET_ZONE_DATA:
+            return {
+                ...state,
+                zoneData: action.payload
             }
         default:
             return state

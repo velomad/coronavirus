@@ -31,7 +31,6 @@ export const getLiveStatsAction = () => {
           const allDataStats = allData[0];
           const allDataFactoids = allData[1];
           const allDataUpdates = allData[2];
-          console.log(allDataStats)
           dispatch({
             type: GET_LIVE_STATS,
             payload: allDataStats.data.statewise[0],

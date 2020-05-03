@@ -20,7 +20,7 @@ function App(props) {
         <Route exact path="/" component={Home} />
         <Route path="/demographics" component={Demographics} />
         <Route path="/deep-dive" component={DeepDive} />
-        <Route path="/state/:stateCode" component={StateInfo} />
+        <Route path="/state/:statename" component={StateInfo} />
       </BrowserRouter>
     </div>
   );

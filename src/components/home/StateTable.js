@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './statetable.css';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const StateTable = (props) => {
@@ -66,7 +66,7 @@ const StateTable = (props) => {
 			<table className="table">
 				<thead className="thead-dark">
 					<tr>
-						<th>State</th>
+						<th>States/UT</th>
 						<th className="confirmed"></th>
 						<th className="active"></th>
 						<th className="recovered"></th>
@@ -76,8 +76,8 @@ const StateTable = (props) => {
 				<tbody>
 					{filteredStates.map((data, index) => (
 						<tr key={index} >
-							<Link to={`state/${data.statecode}`}>
-								<td className={`${props.modeState && 'dark-table'} `}>{data.state}</td></Link>
+							{/* <Link to={`state/${data.statecode}`}> */}
+							<td className={`${props.modeState && 'dark-table'} `}>{data.state}</td>
 							<td className={`${data.deltaconfirmed > 60 ? `rgba-red-slight` : ''} ${props.modeState && 'dark-table'}`}>
 								{data.confirmed}
 								{data.deltaconfirmed <= 0 ? (
