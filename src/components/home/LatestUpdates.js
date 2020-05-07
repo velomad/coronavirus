@@ -13,7 +13,7 @@ const LatestUpdates = (props) => {
     <div>
       <div>
         <p onClick={() => setLatestUpdates(!latestUpdates)} className="updates">
-          <span className="badge badge-info notification"> {props.getLatestUpdates.length} </span>Latest Updates
+          <span className="badge badge-info notification"> {props.getLatestUpdates.length} </span>
 					{latestUpdates ? <i className="mt-1 far fa-bell-slash"></i> : <i className="mt-1 far fa-bell"></i>}
         </p>
       </div>

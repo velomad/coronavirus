@@ -1,14 +1,26 @@
 ==============Issues / bugs==========
 
-1. display real data to the map tooltip and stats-box
 
-    
+1.fix search bar for states
+
+3. correct the test conducted values
+
+4. add notification center to global componentdidmount soo that it renders the information
+
+5.not showing nos samples tested globally 
+
+6. remove same state name from select option of stateinfo page
+
 ==============Improvisations===========
 
-1. latest updates
-make it scrollable , add more updates atleast 8-10
+1.stats Card - show more information on the card 
 
-2.stats Card
-show more information on the card 
+2. add "2 mins ago" timeDistance to updated at
 
-3. add "2 mins ago" timeDistance to updated at
+3. unread notifications on the notification bell icon and syncing with localstorage
+
+
+
+apex charts or any other fukin charts
+convert all actions into single action
+

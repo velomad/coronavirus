@@ -8,7 +8,7 @@ const StateStats = (props) => {
 
             <div className="container mt-5">
 
-                {window.innerWidth <= 200 ? <p className="text-muted" style={{ textAlign: "center" }}>Tap on the state to get statistics of it.</p> : <p className="text-muted" style={{ textAlign: "center" }}>Hover over the state to get statistics of it.</p>}
+                {window.innerWidth <= 600 ? <p className="text-muted" style={{ textAlign: "center" }}>Tap on the state to get statistics of it.</p> : <p className="text-muted" style={{ textAlign: "center" }}>Hover over the state to get statistics of it.</p>}
 
 
                 <div className="row">
@@ -41,11 +41,11 @@ const StateStats = (props) => {
 
                 </div>
 
-                <div>
-                    {props.lastUpdatedTime &&
+                {props.lastUpdatedTime &&
+                    <div>
                         <Link to={`state/${props.stateCode}`}><span className="rgba-orange-slight text-warning" style={{ padding: "10px", borderRadius: "10px", fontWeight: 500 }}>Visit State Page</span></Link>
-                    }
-                </div>
+                    </div>
+                }
             </div>
         </div>
     )

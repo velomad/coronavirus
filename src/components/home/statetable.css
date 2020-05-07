@@ -32,7 +32,7 @@ table .deceased::before {
     content: "Cnfrm ";
   }
   table .active::before {
-    content: "Active ";
+    content: "Actv ";
   }
   table .recovered::before {
     content: "Rcvrd ";

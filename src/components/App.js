@@ -6,8 +6,9 @@ import Demographics from './demographics/Demographics';
 import DeepDive from './deep-dive/DeepDive';
 import '../index.css'
 import { connect } from 'react-redux';
-import StateInfo from "./home/StateInfo";
-
+import StateInfo from "./stateinfo/StateInfo";
+import Footer from "./footer/Footer";
+// import { Redirect } from 'react-router-dom';
 
 
 function App(props) {
@@ -18,9 +19,12 @@ function App(props) {
       <BrowserRouter>
         <NavBar />
         <Route exact path="/" component={Home} />
-        <Route path="/demographics" component={Demographics} />
+        {/* <Route path="/demographics" component={Demographics} /> */}
         <Route path="/deep-dive" component={DeepDive} />
         <Route path="/state/:statename" component={StateInfo} />
+        {/* <Route render={() => <Redirect to={{pathname: "/"}} />} /> */}
+        {/* <Route path="*" component={Home} /> */}
+        <Footer/>
       </BrowserRouter>
     </div>
   );

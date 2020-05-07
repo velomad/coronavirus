@@ -28,10 +28,10 @@ const Home = (props) => {
 					<div className="col-sm-12">
 						<UpdateLiveStats lastUpdatedTime={props.liveStatsData.lastupdatedtime} />
 					</div>
-
+{/* 
 					<div className="col-sm-12">
 						<LatestUpdates />
-					</div>
+					</div> */}
 				</div>
 
 				{/* stats cards  */}
@@ -108,6 +108,7 @@ const Home = (props) => {
 
 					<div className="col-lg-6">
 						<IndiaMap />
+						{/* <Test/> */}
 					</div>
 				</div>
 			</div>

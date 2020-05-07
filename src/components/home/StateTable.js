@@ -41,14 +41,14 @@ const StateTable = (props) => {
 	return (
 		<div className="container">
 			<div className="row before-table-row mt-3">
-				<input
+				{/* <input
 					className={`form-control col-sm-3 ${props.modeState && 'dark-body'}`}
 					id="tableSearch"
 					type="text"
 					placeholder="Search State"
 					value={searchValue}
 					onChange={(e) => setSearchValue(e)}
-				/>
+				/> */}
 
 				{isConfirmed && (
 					<div className="label ml-3">

@@ -1,0 +1,71 @@
+.bread {
+    display: inline-flex;
+}
+
+.state-count-box{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    /* margin-top: 20px; */
+    text-align: center;
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.district-data{
+    text-align: left;
+}
+
+.dist-list{
+    margin-top: 15px;
+}
+    
+
+.dist-row{
+    text-align: left;
+    border-radius: 10px;
+
+}
+
+.districts-map{
+    margin-top: 20px;
+}
+
+ .fa-arrow-alt-circle-up{
+    display: flex;
+    align-items: flex-start;
+}
+
+.delta-confirmed{
+    margin-top: -4px;
+    margin-left: 5px;
+}
+
+.delta-data{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.zoneSign{
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.info-icon{
+    position: absolute;
+    right: 5px;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .zone-info{
+        display: flex;
+        justify-content: center;
+    }
+  }
+  
